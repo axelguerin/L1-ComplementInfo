@@ -20,6 +20,30 @@ public class Main {
 			return fibonacci(n - 1) + fibonacci(n - 2);
 		}
 	}
+	
+	public static int somme(ArrayList<Integer> liste) {
+		if (liste.isEmpty()) {
+			return 0;
+		} else {
+			int e = liste.getFirst();
+			liste.removeFirst();
+			return e + somme(liste);
+		}
+	}
+	
+	public static ArrayList<Integer> concat(
+			ArrayList<Integer> listeA, 
+			ArrayList<Integer> listeB
+		) {
+		if (listeB.isEmpty()) {
+			return listeA;
+		} else {
+			int e = listeB.getFirst();
+			listeB.removeFirst();
+			listeA.add(e);
+			return concat(listeA, listeB);
+		}
+	}
 
 	public static void main(String[] args) {
 		ArrayList<Integer> liste = new ArrayList<>();
@@ -28,6 +52,7 @@ public class Main {
 		liste.add(7);
 		liste.add(1);
 		System.out.println(liste);
+		System.out.println(somme(liste));
 	}
 
 }
