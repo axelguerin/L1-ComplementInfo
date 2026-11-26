@@ -11,6 +11,10 @@ public class Main {
 		}
 	}
 	
+	public static void factorielle() {
+		
+	}
+	
 	public static int fibonacci(int n) {
 		if (n == 0) {
 			return 0;
@@ -19,6 +23,9 @@ public class Main {
 		} else {
 			return fibonacci(n - 1) + fibonacci(n - 2);
 		}
+	}
+	public static void testFibonacci() {
+		
 	}
 	
 	public static int somme(ArrayList<Integer> liste) {
@@ -29,6 +36,10 @@ public class Main {
 			liste.removeFirst();
 			return e + somme(liste);
 		}
+	}
+	
+	public static void testSomme() {
+		
 	}
 	
 	public static ArrayList<Integer> concat(
@@ -44,15 +55,23 @@ public class Main {
 			return concat(listeA, listeB);
 		}
 	}
+	
+	public static void testConcat() {
+		ArrayList<Integer> listeA = new ArrayList<>();
+		listeA.add(5);
+		listeA.add(3);
+		listeA.add(7);
+		listeA.add(1);
+		ArrayList<Integer> listeB = new ArrayList<>();
+		listeB.add(2);
+		listeB.add(9);
+		System.out.println("listeA = " + listeA);
+		System.out.println("listeB = " + listeB);
+		System.out.println("concat(listeA, listeB) = " + concat(listeA, listeB));
+	}
 
 	public static void main(String[] args) {
-		ArrayList<Integer> liste = new ArrayList<>();
-		liste.add(5);
-		liste.add(3);
-		liste.add(7);
-		liste.add(1);
-		System.out.println(liste);
-		System.out.println(somme(liste));
+		testConcat();
 	}
 
 }
